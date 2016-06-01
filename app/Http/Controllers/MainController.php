@@ -14,9 +14,9 @@ class MainController extends Controller {
     }
 
     public function index( Request $request ) {
-        $this->set_data('request', get_class_methods( $request) );
+        $this->setData('request', get_class_methods( $request) );
 
-        $this->set_data('request_d', [
+        $this->setData('request_d', [
             'format' => $request->format(),
             'getMethod' => $request->getMethod(),
             'isJson' => $request->isJson(),

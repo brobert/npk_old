@@ -35,12 +35,20 @@
 
                 // you can do the ajax request here
                 // this is for demo purpose only
+                debugger;
+                $.ajax({
+                    type: $form.attr('method'),
+                    url: $form.attr('action'),
+                    data: $form.serialize(),
+                    success: success,
+                    dataType: dataType
+                })
                 setTimeout(function () {
                     // done nprogress bar
                     NProgress.done();
 
                     // redirect user
-                    location.href = 'index.html';
+                    location.href = '/';
                 }, 500);
             } else {
                 // toggle animation

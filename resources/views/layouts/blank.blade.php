@@ -5,7 +5,7 @@
         <!-- START META SECTION -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Lander.v2 - Bootstrap WebApp & Dashboard</title>
+        <title>{{$title or 'Niepubliczne przedszkole "Krasnal"'}}</title>
         <meta name="author" content="optimisticdesigns">
         <meta name="description" content="Lander.v2 Admin is a clean and flat backend built with twitter bootstrap">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -61,7 +61,33 @@
         <!--/ END Template Footer -->
 
         <!-- START Template Main -->
-@yield('content')
+        <!-- START Template Main -->
+        <section id="main" role="main">
+            <!-- START Template Container -->
+            <div class="container-fluid" style="min-height:1024px;"><!-- add min-height to simulate scrolling -->
+                <!-- Page Header -->
+                <div class="page-header page-header-block">
+
+                    <div class="page-header-section">
+                        <!-- Toolbar -->
+                        <div class="toolbar">
+                            @include('layouts.partials.breadcrumb')
+                        </div>
+                        <!--/ Toolbar -->
+                    </div>
+                </div>
+                <!-- Page Header -->
+                @yield('content')
+
+            </div>
+            <!--/ END Template Container -->
+
+            <!-- START To Top Scroller -->
+            <a href="#" class="totop animation" data-toggle="waypoints totop" data-showanim="bounceIn" data-hideanim="bounceOut" data-offset="50%"><i class="ico-angle-up"></i></a>
+            <!--/ END To Top Scroller -->
+        </section>
+        <!--/ END Template Main -->
+
         <!--/ END Template Main -->
 
         <!-- START JAVASCRIPT SECTION (Load javascripts at bottom to reduce load time) -->
@@ -73,6 +99,7 @@
 
         <!-- Plugins and page level script : optional -->
 		<script type="text/javascript" src="../javascript/pace.min.js"></script>
+        <script type="text/javascript" src="../plugins/nprogress/nprogress.js"></script>
         <!--/ Plugins and page level script : optional -->
         <!--/ END JAVASCRIPT SECTION -->
     </body>

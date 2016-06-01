@@ -2,6 +2,7 @@
 
 return [
 
+    'title' => 'Niepubliczne przedszkole "Krasnal" w Krakowie',
     /*
     |--------------------------------------------------------------------------
     | Application Environment

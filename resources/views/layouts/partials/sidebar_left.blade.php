@@ -4,11 +4,12 @@
 		<!-- START Template Navigation/Menu -->
         <ul class="topmenu topmenu-responsive" data-toggle="menu">
             <li>
-                <a href="index.html" data-target="#dashboard" data-parent=".topmenu">
+                <a href="/" data-target="#dashboard" data-parent=".topmenu">
                     <span class="figure"><i class="ico-home2"></i></span>
-                    <span class="text">Dashboard</span>
+                    <span class="text">{{trans('app.menu.home')}}</span>
                 </a>
             </li>
+            @if ( 0 )
 			<li class="active open" >
                 <a href="javascript:void(0);" data-toggle="submenu" data-target="#layout" data-parent=".topmenu">
                     <span class="figure"><i class="ico-grid"></i></span>
@@ -434,6 +435,7 @@
                 </ul>
                 <!--/ END 2nd Level Menu -->
             </li>
+            @endif
 		</ul>
         <!--/ END Template Navigation/Menu -->
 		<!-- START Sidebar summary -->

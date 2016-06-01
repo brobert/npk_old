@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use Config;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -22,8 +23,6 @@ class Controller extends BaseController {
 
     public function __construct() {
 
-//         parent::__construct();
-        $this->setTitle();
     }
 
     protected function set_view( $view_path )
@@ -40,7 +39,7 @@ class Controller extends BaseController {
         return $this;
     }
 
-    protected function set_data( $key, $data ) {
+    protected function setData( $key, $data ) {
         $this->data[$key] = $data;
     }
 
@@ -48,32 +47,49 @@ class Controller extends BaseController {
 
         switch ( $request->format()) {
             case 'html':
-                $this->attacheUser();
-
-                return $this->render_html();
+                $this->loadRequiredData();
+                return $this->renderHtml();
                 break;
             case 'json':
-                return $this->render_json();
+                return $this->renderJson();
                 break;
         }
 
     }
 
-    private function render_html() {
+    private function renderHtml() {
         return view( $this->view, $this->data );
     }
 
-    private function render_json() {
+    private function renderJson() {
         return [
             'data' => $this->data,
         ];
     }
 
-    private function attacheUser() {
-        $this->set_data('user', Auth::user() );
+    private function attachUser() {
+        $this->setData('user', Auth::user() );
+    }
+
+    private function loadRequiredData() {
+
+        $this->setTitle();
+        $this->attachUser();
+        $this->setData('notification', []);
+        $this->addBreadcrumb( trans('app.menu.home'), '/');
+    }
+
+    protected function addBreadcrumb( $label, $url = false ) {
+        $breadCrumbs = isset( $this->data['breadCrumbs'])? $this->data['breadCrumbs']: [];
+
+        array_push( $breadCrumbs, [
+            'label' => $label,
+            'url'   => $url
+        ] );
+        $this->setData('breadCrumbs', $breadCrumbs );
     }
 
     protected function setTitle() {
-        $this->set_data('title', 'Niepubliczne Przedszkole "Krasnal"' );
+        $this->setData('title', Config::get('app.title', 'Niepubliczne Przedszkole "Krasnal"') );
     }
 }
