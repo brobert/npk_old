@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -45,6 +46,7 @@ class Controller extends BaseController {
 
         switch ( $request->format()) {
             case 'html':
+                $this->attacheUser();
                 return $this->render_html();
                 break;
             case 'json':
@@ -62,5 +64,10 @@ class Controller extends BaseController {
         return [
             'data' => $this->data,
         ];
+    }
+
+    private function attacheUser() {
+
+        $this->set_data('user', Auth::user() );
     }
 }

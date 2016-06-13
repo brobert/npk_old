@@ -11,4 +11,7 @@
 |
 */
 
-Route::get('/', ['uses' => 'MainController@index']);
+Route::get('/', [ 'middleware' => 'auth', 'uses' => 'MainController@index']);
+
+Route::auth();
+
