@@ -7,9 +7,7 @@
     <div class="container-fluid" style="min-height:1024px;"><!-- add min-height to simulate scrolling -->
         <!-- Page Header -->
         <div class="page-header page-header-block">
-            <div class="page-header-section">
-                <h4 class="title semibold">Layout Fixed Header</h4>
-            </div>
+
             <div class="page-header-section">
                 <!-- Toolbar -->
                 <div class="toolbar">
@@ -20,9 +18,12 @@
                 </div>
                 <!--/ Toolbar -->
             </div>
+            <div class="page-header-section">
+                <h4 class="title semibold">Layout Fixed Header</h4>
+            </div>
         </div>
         <!-- Page Header -->
-
+        <div>Content</div>
 
     </div>
     <!--/ END Template Container -->

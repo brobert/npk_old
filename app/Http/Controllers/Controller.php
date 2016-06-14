@@ -22,6 +22,8 @@ class Controller extends BaseController {
 
     public function __construct() {
 
+//         parent::__construct();
+        $this->setTitle();
     }
 
     protected function set_view( $view_path )
@@ -47,6 +49,7 @@ class Controller extends BaseController {
         switch ( $request->format()) {
             case 'html':
                 $this->attacheUser();
+
                 return $this->render_html();
                 break;
             case 'json':
@@ -67,7 +70,10 @@ class Controller extends BaseController {
     }
 
     private function attacheUser() {
-
         $this->set_data('user', Auth::user() );
+    }
+
+    protected function setTitle() {
+        $this->set_data('title', 'Niepubliczne Przedszkole "Krasnal"' );
     }
 }

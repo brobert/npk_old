@@ -13137,6 +13137,7 @@ a.thumbnail.active {
   background-color: #fbfcfc;
 }
 .page-header.page-header-block .title {
+  text-align: right;
   margin: 0px;
 }
 .page-header.page-header-block > [class*=" col-"],
@@ -13156,7 +13157,7 @@ a.thumbnail.active {
     margin-top: 0px;
   }
   .page-header .toolbar {
-    text-align: right;
+    text-align: left;
     margin-bottom: 0px;
   }
   .page-header .toolbar .toolbar-label {
