@@ -16,7 +16,7 @@
                 <ul class="nav navbar-nav navbar-left">
                     <!-- Sidebar shrink -->
                     <li class="hidden-xs hidden-sm">
-                        <a href="javascript:void(0);" class="sidebar-minimize" data-toggle="minimize" title="Minimize sidebar">
+                        <a href="javascript:void(0);" class="sidebar-minimize" data-toggle="minimize" title="{{trans('app.menu.minimize')}}">
                             <span class="meta">
                                 <span class="icon"></span>
                             </span>
@@ -65,7 +65,7 @@
                             </span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="javascript:void(0);"><span class="icon"><i class="ico-user-plus2"></i></span> {{ trans('app.header_dd.account') }}</a></li>
+                            <li><a href="../account"><span class="icon"><i class="ico-user-plus2"></i></span> {{ trans('app.header_dd.account') }}</a></li>
                             <li><a href="../help"><span class="icon"><i class="ico-question"></i></span> {{ trans('app.header_dd.help') }}</a></li>
                             <li class="divider"></li>
                             <li><a href="../logout"><span class="icon"><i class="ico-exit"></i></span> {{ trans('app.header_dd.logout') }}</a></li>

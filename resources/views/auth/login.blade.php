@@ -12,7 +12,7 @@
                 <div class="text-center" style="margin-bottom:40px;">
                     <span class="logo-figure inverse"></span>
                     <span class="logo-text inverse"></span>
-                    <h5 class="semibold text-muted mt-5">Niepubliczne przedszkole "Krasnal"</h5>
+                    <h5 class="semibold text-muted mt-5">{{ Config::get('app.title', 'Niepubliczne Przedszkole "Krasnal"') }}</h5>
                 </div>
                 <!--/ Brand -->
 
@@ -42,16 +42,18 @@
                                 <div class="col-xs-6">
                                     <div class="checkbox custom-checkbox">
                                         <input type="checkbox" name="remember" id="remember" value="1">
-                                        <label for="remember">&nbsp;&nbsp;Remember me</label>
+                                        <label for="remember">&nbsp;&nbsp;{{trans('auth.remember_me')}}</label>
                                     </div>
                                 </div>
                                 <div class="col-xs-6 text-right">
-                                    <a href="javascript:void(0);">Lost password?</a>
+                                    <a href="javascript:void(0);">{{trans('auth.forgot_password')}}</a>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group nm">
-                            <button type="submit" class="btn btn-block btn-success"><span class="semibold">Sign In</span></button>
+                            <button type="submit" class="btn btn-block btn-success">
+								<span class="semibold">{{trans('auth.login')}}</span>
+							</button>
                         </div>
                     </div>
                 </form>
