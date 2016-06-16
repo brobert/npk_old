@@ -25,7 +25,7 @@ class Controller extends BaseController {
 
     }
 
-    protected function set_view( $view_path )
+    protected function setView( $view_path )
     {
         if ( $this->base )
         {

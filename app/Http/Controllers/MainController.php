@@ -22,7 +22,7 @@ class MainController extends Controller {
             'isJson' => $request->isJson(),
         ] );
 
-        $this->set_view('index');
+        $this->setView('index');
         return $this->render( $request );
     }
 }

@@ -13,5 +13,7 @@
 
 Route::get('/', [ 'middleware' => 'auth', 'uses' => 'MainController@index']);
 
+Route::get('/account', [ 'middleware' => 'auth', 'uses' => 'AccountController@index']);
+
 Route::auth();
 
