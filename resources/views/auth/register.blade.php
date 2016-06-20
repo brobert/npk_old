@@ -10,11 +10,31 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
 
+                        <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
+                            <label for="type" class="col-md-4 control-label">Role</label>
+
+                            <div class="col-md-6">
+                                <select name="type" class="form-control">
+                                    <option value="developer">Developer</option>
+                                    <option value="agency">Właściciel</option>
+                                    <option value="admin">Administrator</option>
+                                    <option value="worker">Nauczyciel/Pracownik</option>
+                                    <option value="child">Przedszkolak</option>
+                                </select>
+
+                                @if ($errors->has('type'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('type') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('login') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Login</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="login" value="{{ old('login') }}">
+                                <input id="login" type="text" class="form-control" name="login" value="{{ old('login') }}">
 
                                 @if ($errors->has('login'))
                                     <span class="help-block">
@@ -40,25 +60,25 @@
 
 
 
-                        <div class="form-group{{ $errors->has('secondName') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">secondName</label>
+                        <div class="form-group{{ $errors->has('second_name') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">second name</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="secondName" value="{{ old('secondName') }}">
+                                <input id="second_name" type="text" class="form-control" name="second_name" value="{{ old('second_name') }}">
 
-                                @if ($errors->has('secondName'))
+                                @if ($errors->has('second_name'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('secondName') }}</strong>
+                                        <strong>{{ $errors->first('second_name') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('surName') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">surName</label>
+                        <div class="form-group{{ $errors->has('sur_name') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">sur_name</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="surName" value="{{ old('surName') }}">
+                                <input id="sur_name" type="text" class="form-control" name="sur_name" value="{{ old('surName') }}">
 
                                 @if ($errors->has('surName'))
                                     <span class="help-block">
