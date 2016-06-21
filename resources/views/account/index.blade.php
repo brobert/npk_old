@@ -22,15 +22,11 @@
                                 <img class="img-circle img-bordered" src="../image/avatar/avatar7.jpg" alt="" width="65px">
                             </li>
                             <li class="text-left">
-                                <h5 class="semibold ellipsis mt0">John Doe</h5>
+                                <h5 class="semibold ellipsis mt0">{{Auth::user()->get_full_name()}}</h5>
                                 <div style="max-width:200px;">
                                     <div class="progress progress-xs mb5">
-                                        <div class="progress-bar progress-bar-warning" style="width:70%"></div>
+                                        <div class="progress-bar progress-bar-warning" style="width:100%"></div>
                                     </div>
-                                    <p class="text-muted clearfix nm">
-                                        <span class="pull-left">Profile complete</span>
-                                        <span class="pull-right">70%</span>
-                                    </p>
                                 </div>
                             </li>
                         </ul>
@@ -38,27 +34,6 @@
 
                         <hr><!-- horizontal line -->
 
-                        <!-- follower stats -->
-                        <ul class="nav nav-section nav-justified mt15">
-                            <li>
-                                <div class="section">
-                                    <h4 class="nm semibold">12.5k</h4>
-                                    <p class="nm text-muted">Followers</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="section">
-                                    <h4 class="nm semibold">1853</h4>
-                                    <p class="nm text-muted">Following</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="section">
-                                    <h4 class="nm semibold">3451</h4>
-                                    <p class="nm text-muted">Tweets</p>
-                                </div>
-                            </li>
-                        </ul>
                         <!--/ follower stats -->
                     </div>
                     <!--/ Left / Top Side -->
@@ -70,32 +45,46 @@
                             <!-- tab-pane: profile -->
                             <div class="tab-pane active" id="profile">
                                 <!-- form profile -->
-                                <form class="panel form-horizontal form-bordered" name="form-profile">
+                                <form class="panel panel-default form-bordered" name="form-profile">
+                                    <div class="panel-heading">
+                                                <h4 class="semibold text-primary mt10 mb5">Profile</h4>
+                                                <p class="text-default nm mb10">This information appears on your public profile, search results, and beyond.</p>
+                                    </div>
                                     <div class="panel-body pt0 pb0">
-                                        <div class="form-group header bgcolor-default">
-                                            <div class="col-md-12">
-                                                <h4 class="semibold text-primary mt0 mb5">Profile</h4>
-                                                <p class="text-default nm">This information appears on your public profile, search results, and beyond.</p>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label">Photo</label>
-                                            <div class="col-sm-9">
-                                                <div class="btn-group pr5">
-                                                    <img class="img-circle img-bordered" src="../image/avatar/avatar7.jpg" alt="" width="34px">
+                                        <div class="form-group mt10 bb">
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <label class="control-label">{{ trans('form.label.field.name') }}</label>
+                                                    <input name="name" type="text" class="form-control">
                                                 </div>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-default">Change photo</button>
-                                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                                        <span class="caret"></span>
-                                                    </button>
-                                                    <ul class="dropdown-menu" role="menu">
-                                                        <li><a href="#">Upload photo</a></li>
-                                                        <li><a href="#">Remove</a></li>
-                                                    </ul>
+                                                <div class="col-sm-4">
+                                                    <label class="control-label">{{ trans('form.label.field.second_name') }}</label>
+                                                    <input name="second_name" type="text" class="form-control">
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label class="control-label">{{ trans('form.label.field.sur_name') }}</label>
+                                                    <input name="sur_name" type="text" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
+                                        <hr/>
+                                        <div class="form-group mt10 bb">
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <label class="control-label">{{ trans('form.label.field.name') }}</label>
+                                                    <input name="name" type="text" class="form-control">
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label class="control-label">{{ trans('form.label.field.second_name') }}</label>
+                                                    <input name="second_name" type="text" class="form-control">
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label class="control-label">{{ trans('form.label.field.sur_name') }}</label>
+                                                    <input name="sur_name" type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr/>
                                         <div class="form-group">
                                             <label class="col-sm-3 control-label">Name</label>
                                             <div class="col-sm-6">

@@ -61,7 +61,7 @@
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                             <span class="meta">
                                 <span class="avatar"><img src="../image/avatar/avatar7.jpg" class="img-circle" alt="" /></span>
-                                <span class="text hidden-xs hidden-sm pl5">{{$user->name}}</span>
+                                <span class="text hidden-xs hidden-sm pl5">{{$user->get_full_name()}}</span>
                             </span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
