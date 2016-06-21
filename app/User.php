@@ -27,4 +27,8 @@ class User extends Authenticatable
     public function get_full_name() {
         return sprintf('%s %s %s', $this->name, $this->second_name, $this->sur_name );
     }
+
+    public function is_super_admin() {
+        return $this->type === 'developer';
+    }
 }

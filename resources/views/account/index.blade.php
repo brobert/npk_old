@@ -45,7 +45,7 @@
                             <!-- tab-pane: profile -->
                             <div class="tab-pane active" id="profile">
                                 <!-- form profile -->
-                                <form class="panel panel-default form-bordered" name="form-profile">
+                                <form method="post" action="{{url('/account', Auth::user()->id)}}" class="panel panel-default form-bordered" name="form-profile">
                                     <div class="panel-heading">
                                                 <h4 class="semibold text-primary mt10 mb5">Profile</h4>
                                                 <p class="text-default nm mb10">This information appears on your public profile, search results, and beyond.</p>
@@ -55,79 +55,19 @@
                                             <div class="row">
                                                 <div class="col-sm-4">
                                                     <label class="control-label">{{ trans('form.label.field.name') }}</label>
-                                                    <input name="name" type="text" class="form-control">
+                                                    <input name="name" type="text" class="form-control" value="{{Auth::user()->name }}">
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <label class="control-label">{{ trans('form.label.field.second_name') }}</label>
-                                                    <input name="second_name" type="text" class="form-control">
+                                                    <input name="second_name" type="text" class="form-control" value="{{Auth::user()->second_name }}">
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <label class="control-label">{{ trans('form.label.field.sur_name') }}</label>
-                                                    <input name="sur_name" type="text" class="form-control">
+                                                    <input name="sur_name" type="text" class="form-control" value="{{Auth::user()->sur_name }}">
                                                 </div>
                                             </div>
                                         </div>
                                         <hr/>
-                                        <div class="form-group mt10 bb">
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    <label class="control-label">{{ trans('form.label.field.name') }}</label>
-                                                    <input name="name" type="text" class="form-control">
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <label class="control-label">{{ trans('form.label.field.second_name') }}</label>
-                                                    <input name="second_name" type="text" class="form-control">
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <label class="control-label">{{ trans('form.label.field.sur_name') }}</label>
-                                                    <input name="sur_name" type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <hr/>
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label">Name</label>
-                                            <div class="col-sm-6">
-                                                <input type="text" class="form-control" name="name" value="John Doe">
-                                                <p class="help-block">Enter your real name.</p>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label">Location</label>
-                                            <div class="col-sm-5">
-                                                <input type="text" class="form-control" name="location">
-                                                <p class="help-block">Where in the world are you?</p>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label">Website</label>
-                                            <div class="col-sm-6">
-                                                <input type="text" class="form-control" name="website" value="http://">
-                                                <p class="help-block">Have a homepage or a blog? Put the address here.</p>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label">Bio</label>
-                                            <div class="col-sm-6">
-                                                <textarea class="form-control" rows="3" placeholder="Describe about yourself"></textarea>
-                                                <p class="help-block">About yourself in 160 characters or less.</p>
-                                            </div>
-                                        </div>
-                                        <div class="form-group header bgcolor-default">
-                                            <div class="col-md-12">
-                                                <h4 class="semibold text-primary nm">Facebook</h4>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label">&nbsp;</label>
-                                            <div class="col-sm-9">
-                                                <div class="btn-group pr5">
-                                                    <img class="img-circle img-bordered" src="../image/avatar/avatar7.jpg" alt="" width="34px">
-                                                </div>
-                                                <a href="javascript:void(0);" class="btn btn-facebook">Login to facebook</a>
-                                                <p class="help-block">to manage your connection with Facebook.</p>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="panel-footer">
                                         <button type="reset" class="btn btn-default">Reset</button>

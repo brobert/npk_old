@@ -14,19 +14,29 @@ class CreateUsersTable extends Migration
     {
 
         Schema::create('agencies', function (Blueprint $table) {
-            // columns
+            //
+//             $table->engine = 'MyISAM';
+
             $table->increments('id');
-            $table->string('name');
-            $table->string('description');
+            $table->string('code', 30)->unique();
+            $table->string('name', 255 );
+            $table->text('description')->not_null()->default('');
+            $table->softDeletes();
             $table->timestamps();
+
+            $table->index('code');
+            $table->index('name');
         });
 
             Schema::create('units', function (Blueprint $table) {
                 // columns
             $table->increments('id');
+            $table->integer( 'agency_id')->not_null();
             $table->string('name');
             $table->string('description');
             $table->timestamps();
+
+//             $table->foreign('agency_id')->references('id')->on('agencies');
         });
 
         Schema::create('users', function (Blueprint $table) {
@@ -51,9 +61,9 @@ class CreateUsersTable extends Migration
             $table->index( [ 'unit_id' ] );
             $table->index( [ 'type' ] );
 
-            // foreign keys
-            $table->foreign('agency_id')->references('id')->on('agencies');
-            $table->foreign('unit_id')->references('id')->on('units');
+//             // foreign keys
+//             $table->foreign('agency_id')->references('id')->on('agencies');
+//             $table->foreign('unit_id')->references('id')->on('units');
         });
     }
 
