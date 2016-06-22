@@ -6,7 +6,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use traits\UserAuthorize;
+    use App\Traits\UserAuthorize;
 
     /**
      * The attributes that are mass assignable.
