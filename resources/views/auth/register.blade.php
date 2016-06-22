@@ -10,6 +10,19 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
 
+                        <div class="form-group{{ $errors->has('agency_id') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">{{ trans('form.label.field.agency') }}</label>
+                            <div class="col-md-6">
+                                @if( isset( $agencies) )
+                                <select name="agency_id" class="form-control">
+                                    @foreach( $agencies as $agency_data )
+                                        <option value="{{ $agency_data->id }}">{{ $agency_data->name }}</option>
+                                    @endforeach
+                                </select>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
                             <label for="type" class="col-md-4 control-label">Role</label>
 

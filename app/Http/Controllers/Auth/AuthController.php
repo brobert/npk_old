@@ -4,10 +4,13 @@ namespace App\Http\Controllers\Auth;
 
 use Log;
 use App\User;
+use App\Models\Agency;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+
+use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
@@ -65,6 +68,19 @@ class AuthController extends Controller
     }
 
     /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showRegistrationForm( Request $request)
+    {
+        $this->setView('auth.register');
+
+        $this->setData('agencies', Agency::orderBy('name', 'asc')->get() );
+        return $this->render( $request );
+    }
+
+    /**
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
@@ -81,6 +97,7 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'type' => $data['type'],
+            'agency_id' => $data['agency_id'],
         ]);
     }
 }

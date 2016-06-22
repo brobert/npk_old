@@ -6,6 +6,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    use traits\UserAuthorize;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -24,31 +26,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    private $types_order = [
-        'child',
-        'worker',
-        'admin',
-        'agency',
-        'developer',
-    ];
+
 
     public function get_full_name() {
         return sprintf('%s %s %s', $this->name, $this->second_name, $this->sur_name );
     }
 
-    public function check_type( $type ) {
 
-        foreach ( $this->types_order as $t) {
-            if ( $t === $type ) {
-                return true;
-            }
-            if ( $t === $this->type ) {
-                return;
-            }
-        }
-
-        return;
-    }
 
     public function is_super_admin() {
         return $this->type === 'developer';

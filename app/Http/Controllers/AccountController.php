@@ -25,14 +25,6 @@ class AccountController extends Controller
             $this->setData('agencies', Agency::orderBy('name', 'asc')->get() );
         }
 
-        $user = User::find(2);
-
-        Log::info('check_type: "child" ' . ($user->check_type("child")? 'OK': 'NO'));
-        Log::info('check_type: "worker" ' . ($user->check_type("worker")? 'OK': 'NO'));
-        Log::info('check_type: "admin" ' . ($user->check_type("admin")? 'OK': 'NO'));
-        Log::info('check_type: "agency" ' . ($user->check_type("agency")? 'OK': 'NO'));
-        Log::info('check_type: "developer" ' . ($user->check_type("developer")? 'OK': 'NO'));
-
         return $this->render($request);
     }
 
