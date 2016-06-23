@@ -9,19 +9,18 @@
                     <span class="text">{{trans('app.menu.home')}}</span>
                 </a>
             </li>
-            @if ( 0 )
-			<li class="active open" >
+			<li>
                 <a href="javascript:void(0);" data-toggle="submenu" data-target="#layout" data-parent=".topmenu">
-                    <span class="figure"><i class="ico-grid"></i></span>
-                    <span class="text">Layouts</span>
+                    <span class="figure"><i class="ico-wrench"></i></span>
+                    <span class="text">{{trans('app.menu.manage.main')}}</span>
                     <span class="arrow"></span>
                 </a>
                 <!-- START 2nd Level Menu -->
-                <ul id="layout" class="submenu collapse in">
-                    <li class="submenu-header ellipsis">Page Layout</li>
+                <ul id="layout" class="submenu collapse">
+                    <li class="submenu-header ellipsis">{{trans('app.menu.manage.main')}}</li>
                     <li>
-                        <a href="layout-default.html">
-                            <span class="text">Default</span>
+                        <a href="/manage/agency">
+                            <span class="text">{{trans('app.menu.manage.agency')}}</span>
                         </a>
                     </li>
                     <li >
@@ -54,6 +53,7 @@
                 </ul>
                 <!--/ END 2nd Level Menu -->
             </li>
+            @if ( 0 )
 			<li>
                 <a href="widget.html" data-parent=".topmenu">
                     <span class="figure"><i class="ico-tasks"></i></span>
