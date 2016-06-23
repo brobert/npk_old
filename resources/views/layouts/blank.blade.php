@@ -38,6 +38,14 @@
 
         <!-- Theme stylesheet : optional -->
         <link rel="stylesheet" href="../stylesheet/themes/layouts/fixed-header.css">
+
+        @if( isset($_assets))
+            @if( isset( $_assets[ 'css' ] ) )
+                @foreach( $_assets[ 'css' ] as $_asset )
+                    <link rel="stylesheet" href="../{{$_asset}}">
+                @endforeach
+            @endif
+        @endif
         <!-- Theme stylesheet : optional -->
     </head>
     <!--/ END Head -->
@@ -101,6 +109,18 @@
 		<script type="text/javascript" src="../javascript/pace.min.js"></script>
         <script type="text/javascript" src="../plugins/nprogress/nprogress.js"></script>
         <!--/ Plugins and page level script : optional -->
+
+		<script type="text/javascript" src="../plugins/datatables/js/jquery.dataTables.js"></script>
+        <script type="text/javascript" src="../plugins/datatables/tabletools/js/dataTables.tableTools.js"></script>
+        <script type="text/javascript" src="../plugins/datatables/js/datatables-bs3.js"></script>
+
+        @if( isset($_assets))
+            @if( isset( $_assets[ 'js' ] ) )
+                @foreach( $_assets[ 'js' ] as $_asset )
+                    <script type="text/javascript" src="../javascript/{{$_asset}}"></script>
+                @endforeach
+            @endif
+        @endif
         <!--/ END JAVASCRIPT SECTION -->
     </body>
     <!--/ END Body -->

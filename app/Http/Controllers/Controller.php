@@ -43,9 +43,10 @@ class Controller extends BaseController {
         $this->data[$key] = $data;
     }
 
-    protected function render( Request $request ) {
+    protected function render( Request $request, $asJson = false ) {
 
-        switch ( $request->format()) {
+        $reqFormat = $asJson? 'json': $request->format();
+        switch ( $reqFormat ) {
             case 'html':
                 $this->loadRequiredData();
                 return $this->renderHtml();
@@ -57,14 +58,29 @@ class Controller extends BaseController {
 
     }
 
+    protected function add_assets( $path, $type ) {
+
+        if ( $type === 'js' || $type === 'css' ) {
+            $assets = isset($this->data['_assets'])? $this->data['_assets']: [];
+            if ( isset( $assets[$type] ) ) {
+                array_push( $assets[$type], $path );
+            } else {
+                $assets[$type] = [ $path ];
+            }
+
+            $this->setData('_assets', $assets );
+        } else {
+            Log::error('Unsupported asset type');
+            throw new \InvalidArgumentException('Unsupported asset type: ' . $type );
+        }
+    }
+
     private function renderHtml() {
         return view( $this->view, $this->data );
     }
 
     private function renderJson() {
-        return [
-            'data' => $this->data,
-        ];
+        return $this->data;
     }
 
     private function attachUser() {

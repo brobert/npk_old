@@ -26,6 +26,8 @@ Route::group(['prefix' => 'manage', 'middleware' => 'manage'], function () {
 
 });
 
+    Route::get('res/agency', [ 'uses' => 'Manage\AgencyController@ajax_agency']);
+
 Route::auth();
 
 Route::get( '/forbidden',  [ 'uses' => 'ErrorsController@forbidden']);
