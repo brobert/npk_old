@@ -15,12 +15,26 @@ class CreateUsersTable extends Migration
 
         Schema::create('agencies', function (Blueprint $table) {
             //
-//             $table->engine = 'MyISAM';
-
             $table->increments('id');
             $table->string('code', 30)->unique();
             $table->string('name', 255 );
             $table->text('description')->not_null()->default('');
+
+            $table->string('owner')->not_null();
+            $table->string('phone')->not_null();
+            $table->string('e_mail')->not_null();
+            // adress section
+            $table->string('street');
+            $table->string('app_number');
+            $table->string('house_number')->not_null();
+            $table->string('city')->not_null();
+            $table->string('state')->not_null();
+            $table->string('postal_code')->not_null();
+
+            $table->string('KRS')->unique()->not_null();
+            $table->string('NIP')->unique()->not_null();
+            $table->string('REGON')->unique()->not_null();
+
             $table->softDeletes();
             $table->timestamps();
 
@@ -28,7 +42,7 @@ class CreateUsersTable extends Migration
             $table->index('name');
         });
 
-            Schema::create('units', function (Blueprint $table) {
+        Schema::create('units', function (Blueprint $table) {
                 // columns
             $table->increments('id');
             $table->integer( 'agency_id')->not_null();
@@ -64,7 +78,10 @@ class CreateUsersTable extends Migration
 //             // foreign keys
 //             $table->foreign('agency_id')->references('id')->on('agencies');
 //             $table->foreign('unit_id')->references('id')->on('units');
+
+
         });
+        Artisan::call('db:seed', array('--class' => 'AgencySeeder'));
     }
 
     /**
