@@ -13,8 +13,7 @@
             {{$agency->street}},
             @if( $agency->app_number ) {{$agency->app_number}} / @endif {{$agency->house_number}}
             </br>
-            {{$agency->postal_code}} <strong>{{$agency->city}}</strong> </br>
-            {{$agency->state}}</br>
+            {{$agency->postal_code}} <strong>{{$agency->city}}</strong>, {{$agency->state}}</br>
             <abbr title="Phone">tel:</abbr> {{$agency->phone}}
         </address>
     </td>

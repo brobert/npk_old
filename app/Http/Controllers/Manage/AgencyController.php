@@ -38,4 +38,11 @@ class AgencyController extends Controller {
 
         return $this->render( $request, true );
     }
+
+    public function create ( Request $request ) {
+
+        $this->setView('form');
+        $this->setData( 'agency', new Agency() );
+        return $this->render( $request );
+    }
 }

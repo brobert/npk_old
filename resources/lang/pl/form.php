@@ -7,5 +7,10 @@ return [
             'second_name' => 'Drugie imie',
             'sur_name'  => 'Nazwisko'
         ]
+    ],
+    'agency' => [
+        'label' => [
+            'name' => 'Nazwa Agencji',
+        ]
     ]
 ];
