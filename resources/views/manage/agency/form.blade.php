@@ -4,84 +4,79 @@
 <!-- START row -->
 <div class="row">
     <div class="col-md-12">
-        <form class="panel panel-default" action="" data-parsley-validate>
+        <form class="panel panel-default" action="/manage/agency/store" method="POST" name="agency" data-parsley-validate>
             <div class="panel-heading">
-                <h3 class="panel-title"><i class="ico-tshirt mr5"></i> T-shirt order sample</h3>
+                <h3 class="panel-title"><i class="ico-tshirt mr5"></i>{{trans('form.agency.title')}}</h3>
             </div>
             <div class="panel-body">
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-sm-6">
                             <label class="control-label">{{trans('form.agency.label.name')}}<span class="text-danger">*</span></label>
                             <input name="name" type="text" class="form-control" required>
                         </div>
+                        <div class="col-sm-6">
+                            <label class="control-label">{{trans('form.agency.label.description')}}</label>
+                            <textarea name="description" class="form-control" rows="3"></textarea>
+                        </div>
+                        @if (0)
+                        <div class="col-sm-3">
+                            <label class="control-label">{{trans('form.agency.label.nip')}}</label>
+                            <input name="nip" type="text" class="form-control" required>
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="control-label">{{trans('form.agency.label.regon')}}</label>
+                            <input name="regon" type="text" class="form-control" required>
+                        </div>
+                        @endif
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <label class="control-label">Size <span class="text-danger">*</span></label>
-                            <select name="size" class="form-control" required>
-                                <option value="">Select</option>
-                                <option value="1">S</option>
-                                <option value="2">M</option>
-                                <option value="3">L</option>
-                                <option value="3">XL</option>
-                            </select>
+                    <div class="row  mb10">
+                        <div class="col-sm-12">
+                            <label class="control-label">{{trans('form.agency.label.concact')}}</label>
                         </div>
-                        <div class="col-sm-6">
-                            <label class="control-label">Color <span class="text-danger">*</span></label>
-                            <select name="color" class="form-control" required>
-                                <option value="">Select</option>
-                                <option value="1">Red</option>
-                                <option value="2">Green</option>
-                                <option value="3">Yellow</option>
-                                <option value="3">Purple</option>
-                            </select>
+
+                        <div class="col-sm-4">
+                            <input name="owner" type="text" class="form-control" placeholder="{{trans('form.agency.placeholder.owner')}}"  required>
                         </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <label class="control-label">Name <span class="text-danger">*</span></label>
-                            <input name="name" type="text" class="form-control" required>
+
+                        <div class="col-sm-4">
+                            <input name="phone" type="text" class="form-control" placeholder="{{trans('form.agency.placeholder.phone')}}"  required>
                         </div>
-                        <div class="col-sm-6">
-                            <label class="control-label">Email <span class="text-danger">*</span></label>
-                            <input name="email" type="text" class="form-control" data-parsley-trigger="change" data-parsley-type="email" required>
+
+                        <div class="col-sm-4">
+                            <input name="e_mail" type="text" class="form-control" placeholder="{{trans('form.agency.placeholder.e_mail')}}"  required>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="row">
                         <div class="col-sm-12">
-                            <label class="control-label">Address</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 mb10">
-                            <input name="street" type="text" class="form-control" placeholder="Street Address">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 mb10">
-                            <input name="addressline" type="text" class="form-control" placeholder="Address Line 2">
+                            <label class="control-label">{{trans('form.agency.label.adress')}}</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 mb10">
-                            <input name="city" type="text" class="form-control" placeholder="City">
+                            <input name="street" type="text" class="form-control" placeholder="{{trans('form.agency.placeholder.street')}}"  required>
                         </div>
-                        <div class="col-sm-6 mb10">
-                            <input name="state" type="text" class="form-control" placeholder="State / Province / Region">
+                        <div class="col-sm-3 mb10">
+                            <input name="house_number" type="text" class="form-control" placeholder="{{trans('form.agency.placeholder.house_number')}}"  required>
+                        </div>
+                        <div class="col-sm-3 mb10">
+                            <input name="app_number" type="text" class="form-control" placeholder="{{trans('form.agency.placeholder.app_number')}}">
                         </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="checkbox custom-checkbox">
-                        <input type="checkbox" name="gift" id="giftcheckbox" value="1" data-parsley-mincheck="1" required>
-                        <label for="giftcheckbox">&nbsp;&nbsp;Send as a gift</label>
+                    <div class="row">
+                        <div class="col-sm-3 mb10">
+                            <input name="postal_code" type="text" class="form-control" placeholder="{{trans('form.agency.placeholder.postal_code')}}"  required>
+                        </div>
+                        <div class="col-sm-4 mb10">
+                            <input name="city" type="text" class="form-control" placeholder="{{trans('form.agency.placeholder.city')}}"  required>
+                        </div>
+                        <div class="col-sm-5 mb10">
+                            <input name="state" type="text" class="form-control" placeholder="{{trans('form.agency.placeholder.state')}}"  required>
+                        </div>
                     </div>
                 </div>
             </div>

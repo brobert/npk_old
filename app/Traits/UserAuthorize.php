@@ -4,24 +4,20 @@ namespace App\Traits;
 
 trait UserAuthorize {
 
-    private $types_order = [
-        'child',
-        'worker',
-        'admin',
-        'agency',
-        'developer',
-    ];
+    private $types = ['developer', 'agency', 'admin', 'worker', 'child'];
 
+    /**
+     *
+     * @method check_type
+     * UserAuthorize
+     * @param unknown $type
+     * @return boolean
+     */
     public function check_type( $type ) {
 
-        foreach ( $this->types_order as $t) {
-            if ( $t === $type ) {
-                return true;
-            }
-            if ( $t === $this->type ) {
-                return;
-            }
+        if ( array_search( $type, $this->types) === false ) {
+            return false;
         }
-        return;
+        return ( array_search( $type, $this->types) <= array_search( $this->type, $this->types) );
     }
 }

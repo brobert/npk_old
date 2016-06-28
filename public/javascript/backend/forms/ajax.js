@@ -25,6 +25,7 @@
     // Core function
     // ================================
     var formAjax = function (event) {
+        debugger;
         var $form   = $(this),
             $btn    = $form.find('button[type="submit"]'),
             data    = $form.serialize(),
@@ -86,7 +87,7 @@
     $(function () {
         // Init form
         // ================================
-        $('form[name="basic"]').on('submit', formAjax);
+        $('form[name="agency"]').on('submit', formAjax);
         $('form[name="validation"]').on('submit', formAjax);
         $('form[name="404"]').on('submit', formAjax);
         $('form[name="500"]').on('submit', formAjax);

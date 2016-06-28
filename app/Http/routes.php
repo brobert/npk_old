@@ -20,7 +20,7 @@ Route::get( '/agency', [ 'middleware' => 'auth', 'uses' => 'AgencyControler@list
 Route::get( '/agency/{id}', [ 'middleware' => 'auth', 'uses' => 'AgencyControler@detail']);
 Route::get( '/agency/{id}/edit', [ 'middleware' => 'auth', 'uses' => 'AgencyControler@edit_form']);
 
-Route::group(['prefix' => 'manage', 'middleware' => 'manage'], function () {
+Route::group(['prefix' => 'manage', 'middleware' => [ 'auth', 'manage' ] ], function () {
     Route::get('agency', [ 'uses' => 'Manage\AgencyController@index']);
     Route::get('agency/create', [ 'uses' => 'Manage\AgencyController@create']);
 

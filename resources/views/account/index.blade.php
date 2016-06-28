@@ -19,7 +19,7 @@
                         <!-- figure with progress -->
                         <ul class="list-table">
                             <li style="width:70px;">
-                                <img class="img-circle img-bordered" src="../image/avatar/avatar7.jpg" alt="" width="65px">
+                                <img class="img-circle img-bordered" src="/image/avatar/avatar7.jpg" alt="" width="65px">
                             </li>
                             <li class="text-left">
                                 <h5 class="semibold ellipsis mt0">{{Auth::user()->get_full_name()}}</h5>

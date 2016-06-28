@@ -26,13 +26,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-
-
     public function get_full_name() {
         return sprintf('%s %s %s', $this->name, $this->second_name, $this->sur_name );
     }
-
-
 
     public function is_super_admin() {
         return $this->type === 'developer';
@@ -41,4 +37,5 @@ class User extends Authenticatable
     public function agency() {
         return $this->belongsTo('App\Models\Agency');
     }
+
 }

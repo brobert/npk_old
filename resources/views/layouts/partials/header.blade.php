@@ -60,15 +60,15 @@
                     <li class="dropdown profile">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                             <span class="meta">
-                                <span class="avatar"><img src="../image/avatar/avatar7.jpg" class="img-circle" alt="" /></span>
+                                <span class="avatar"><img src="/image/avatar/avatar7.jpg" class="img-circle" alt="" /></span>
                                 <span class="text hidden-xs hidden-sm pl5">{{$user->get_full_name()}}</span>
                             </span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="../account"><span class="icon"><i class="ico-user-plus2"></i></span> {{ trans('app.header_dd.account') }}</a></li>
-                            <li><a href="../help"><span class="icon"><i class="ico-question"></i></span> {{ trans('app.header_dd.help') }}</a></li>
+                            <li><a href="/account"><span class="icon"><i class="ico-user-plus2"></i></span> {{ trans('app.header_dd.account') }}</a></li>
+                            <li><a href="/help"><span class="icon"><i class="ico-question"></i></span> {{ trans('app.header_dd.help') }}</a></li>
                             <li class="divider"></li>
-                            <li><a href="../logout"><span class="icon"><i class="ico-exit"></i></span> {{ trans('app.header_dd.logout') }}</a></li>
+                            <li><a href="/logout"><span class="icon"><i class="ico-exit"></i></span> {{ trans('app.header_dd.logout') }}</a></li>
                         </ul>
                     </li>
                     <!-- Profile dropdown -->

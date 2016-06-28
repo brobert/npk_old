@@ -43,6 +43,9 @@ class AgencyController extends Controller {
 
         $this->setView('form');
         $this->setData( 'agency', new Agency() );
+
+        $this->add_assets( 'backend/forms/ajax.js', 'js' );
+        $this->add_assets( '../plugins/ladda/js/ladda.js', 'js');
         return $this->render( $request );
     }
 }
