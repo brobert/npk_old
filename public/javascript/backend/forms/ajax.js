@@ -15,7 +15,8 @@
     if (typeof define === 'function' && define.amd) {
         define([
             'parsley',
-            'ladda'
+            'ladda',
+            'gritter'
         ], factory);
     } else {
         factory();
@@ -25,37 +26,28 @@
     // Core function
     // ================================
     var formAjax = function (event) {
-        debugger;
         var $form   = $(this),
-            $btn    = $form.find('button[type="submit"]'),
+            $btn    = $form.find('button[name="submit"]'),
             data    = $form.serialize(),
             type    = $form.attr('method'),
             url     = $form.attr('action');
 
         if ($form.parsley().validate()) {
+            
             var jxhr = $.ajax({
                 type: type,
                 url: url,
                 dataType: 'json',
                 data: data
-            }),
-            ladda = Ladda.create($btn[0]).start();
+            }).done(function (data) {
 
-            jxhr.done(function (data) {
-                ladda.stop();
-
-                var bsalert = '';
-                    bsalert += '<div class="alert alert-success animation animating flipInX">';
-                    bsalert += '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>';
-                    bsalert += '<h4 class="semibold mb5">Success!</h4>';
-                    bsalert += '<p class="nm">'+data.text+'</p>';
-                    bsalert += '</div>';
-
-                $form.find('.message-container').html(bsalert);
-            });
-
-            jxhr.fail(function (data) {
-                ladda.stop();
+                $.gritter.add({
+                    title: data.status || $btn.data('title-s') || 'Succes',
+                    text: $btn.data('msg-s') || 'All setting saved',
+                    time: 1500
+                });
+                
+            }).fail(function (data) {
 
                 var bsalert = '', 
                     message;
@@ -69,19 +61,17 @@
                         message = 'Internal server / script error!';
                     break;
                 }
-                // construct bootstrap alert with some css animation
-                bsalert += '<div class="alert alert-danger animation animating flipInX">';
-                bsalert += '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>';
-                bsalert += '<h4 class="semibold mb5">'+data.status+' error!</h4>';
-                bsalert += '<p class="nm">'+message+'</p>';
-                bsalert += '</div>';
-
-                // append to affected form
-                $form.find('.message-container').html(bsalert);
+                
+                $.gritter.add({
+                    title: $btn.data('title-f') || 'Error',
+                    text: $btn.data('msg-f') || 'Something went wrong, try again later',
+                    time: 3000
+                });
             });
         }
 
         event.preventDefault();
+        return false;
     };
 
     $(function () {

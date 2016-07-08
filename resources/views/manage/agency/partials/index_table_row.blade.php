@@ -26,7 +26,7 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-right">
-                    <li><a href="javascript:void(0);"><i class="icon ico-pencil"></i>Update</a></li>
+                    <li><a href="{{ route('agency_edit', ['id' => $agency->id]) }}"><i class="icon ico-pencil"></i>Update</a></li>
                     <li><a href="javascript:void(0);"><i class="icon ico-print3"></i>Print</a></li>
                     <li class="divider"></li>
                     <li><a href="javascript:void(0);" class="text-danger"><i class="icon ico-remove3"></i>Delete</a></li>

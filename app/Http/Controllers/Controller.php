@@ -19,11 +19,73 @@ class Controller extends BaseController {
 
     protected $view = false;
 
-    protected $data = [];
+    protected $data = [
+        'breadCrumbs' => [],
+    ];
+
+    protected $repository;
 
     public function __construct() {
 
+        $this->add_base_crumb();
     }
+
+    public function index()
+    {
+        $lines = $this->repository->getPaginate(10);
+        $links = str_replace('/?', '?', $lines->render());
+
+        return view($this->base.'.list', compact('lines', 'links'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  App\Http\Requests\SharedRequest $request
+     * @param  int  $id
+     * @return Response
+     */
+    public function update(SharedRequest $request, $id)
+    {
+        $this->repository->update($id, $request->all());
+
+        return redirect(route($this->base.'.index'))->with('message_success', $this->message_update);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  App\Http\Requests\SharedRequest $request
+     * @return Response
+     */
+    public function store(SharedRequest $request)
+    {
+        $this->repository->store($request->all());
+
+        return redirect(route($this->base.'.index'))->with('message_success', $this->message_store);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        $this->repository->destroyById($id);
+
+        return redirect(route($this->base.'.index'))->with('message_success', $this->message_delete);
+    }
+
+    /**
+     *
+     * @method setView
+     * Controller
+     * @param unknown $view_path
+     * @throws \InvalidArgumentException
+     * @return \App\Http\Controllers\Controller
+     */
 
     protected function setView( $view_path )
     {
@@ -92,20 +154,36 @@ class Controller extends BaseController {
         $this->setTitle();
         $this->attachUser();
         $this->setData('notification', []);
-        $this->addBreadcrumb( trans('app.menu.home'), '/');
+
+    }
+
+    private function add_base_crumb() {
+
+        $breadCrumbs = isset( $this->data['breadCrumbs'])? $this->data['breadCrumbs']: [];
+
+        array_unshift( $breadCrumbs, [
+            'label' => trans('app.menu.home'),
+            'url'   => '/'
+        ] );
+
+        $this->setData('breadCrumbs', $breadCrumbs );
     }
 
     protected function addBreadcrumb( $label, $url = false ) {
+
         $breadCrumbs = isset( $this->data['breadCrumbs'])? $this->data['breadCrumbs']: [];
+
 
         array_push( $breadCrumbs, [
             'label' => $label,
             'url'   => $url
         ] );
+
         $this->setData('breadCrumbs', $breadCrumbs );
     }
 
     protected function setTitle() {
         $this->setData('title', Config::get('app.title', 'Niepubliczne Przedszkole "Krasnal"') );
     }
+
 }

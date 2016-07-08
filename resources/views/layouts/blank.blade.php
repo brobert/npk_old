@@ -30,6 +30,7 @@
         <!-- Theme stylesheet -->
 		<link rel="stylesheet" href="/stylesheet/themes/theme.css">
         <!--/ Theme stylesheet -->
+        <script type="text/javascript" src="/javascript/jquery-3.0.0.min.js"></script>
 
         <!-- modernizr script -->
         <script type="text/javascript" src="/plugins/modernizr/js/modernizr.js"></script>

@@ -30,11 +30,12 @@
             </div>
             <div class="panel-toolbar text-right">
                 <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-default"><i class="ico-upload22"></i></button>
-                    <button type="button" class="btn btn-sm btn-default"><i class="ico-archive2"></i></button>
+                    <button type="button" class="btn btn-default"><i class="ico-upload22"></i></button>
+                    <button type="button" class="btn btn-default"><i class="ico-archive2"></i></button>
                 </div>
 
-                <button type="button" class="btn btn-sm btn-danger"><i class="ico-remove3"></i></button>
+                <a class="btn btn-info" href="{{route('agency_create')}}"><i class="ico-plus-sign"></i></a>
+                <button type="button" class="btn btn-danger"><i class="ico-remove3"></i></button>
             </div>
         </div>
         <!--/ panel toolbar wrapper -->

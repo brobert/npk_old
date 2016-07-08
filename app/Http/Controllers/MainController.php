@@ -9,18 +9,24 @@ class MainController extends Controller {
 
     protected $base = 'main';
 
-    public function __construct( Request $request ) {
+    public function __construct( ) {
         parent::__construct();
     }
 
-    public function index( Request $request ) {
-        $this->setData('request', get_class_methods( $request) );
+    public function index() {
+
+        $request = new Request();
+        $this->setData('debug', [
+            'get_class_vars( $request)'        => get_class_vars( $request),
+            'get_class_methods( $request )' => get_class_methods( $request ),
+        ]);
 
         $this->setData('request_d', [
             'format' => $request->format(),
             'getMethod' => $request->getMethod(),
             'isJson' => $request->isJson(),
         ] );
+
 
         $this->setView('index');
         return $this->render( $request );
