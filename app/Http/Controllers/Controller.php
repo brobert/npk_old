@@ -30,7 +30,7 @@ class Controller extends BaseController {
         $this->add_base_crumb();
     }
 
-    public function index()
+    public function index( Request $request )
     {
         $lines = $this->repository->getPaginate(10);
         $links = str_replace('/?', '?', $lines->render());
@@ -45,7 +45,7 @@ class Controller extends BaseController {
      * @param  int  $id
      * @return Response
      */
-    public function update(SharedRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $this->repository->update($id, $request->all());
 
@@ -58,7 +58,7 @@ class Controller extends BaseController {
      * @param  App\Http\Requests\SharedRequest $request
      * @return Response
      */
-    public function store(SharedRequest $request)
+    public function store(Request $request)
     {
         $this->repository->store($request->all());
 

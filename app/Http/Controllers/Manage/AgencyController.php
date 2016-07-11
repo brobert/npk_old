@@ -91,7 +91,7 @@ class AgencyController extends Controller {
         return $this->render( $request );
     }
 
-    public function store( Request $request, $id ) {
+    public function store( Request $request ) {
 
         $agency = Agency::find( $id );
         $agency->fill( $request->except(['_token']) );

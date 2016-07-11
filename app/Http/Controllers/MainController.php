@@ -13,7 +13,7 @@ class MainController extends Controller {
         parent::__construct();
     }
 
-    public function index() {
+    public function index( Request $request ) {
 
         $request = new Request();
         $this->setData('debug', [
