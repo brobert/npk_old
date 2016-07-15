@@ -15,7 +15,6 @@ class MainController extends Controller {
 
     public function index( Request $request ) {
 
-        $request = new Request();
         $this->setData('debug', [
             'get_class_vars( $request)'        => get_class_vars( $request),
             'get_class_methods( $request )' => get_class_methods( $request ),
