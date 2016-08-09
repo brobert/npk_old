@@ -32,11 +32,16 @@
                         </div>
                         @endif
                     </div>
+					<div class="row">
+						<div class="col-sm-6">
+						{{ Form::text('first_name', null, ['class' => 'form-control']) }}
+						</div>
+					</div>
                 </div>
                 <div class="form-group">
                     <div class="row  mb10">
                         <div class="col-sm-12">
-                            <label class="control-label">{{trans('form.agency.label.concact')}}</label>
+                            <label class="control-label">{{trans('form.agency.label.contact')}}</label>
                         </div>
 
                         <div class="col-sm-4">

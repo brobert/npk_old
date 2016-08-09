@@ -89,8 +89,11 @@ class Controller extends BaseController {
 
     protected function setView( $view_path )
     {
-        if ( $this->base )
-        {
+        if ( view()->exists( $view_path ) ) {
+            $this->view = $view_path;
+            return $this;
+        }
+        if ( $this->base ) {
             $view_path = $this->base . '.' . $view_path;
         }
 

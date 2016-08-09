@@ -8,7 +8,7 @@
         <div class="panel-body">
             Lorem ipsum dolor sit amet, mei essent everti theophrastus an, accusam lucilius vis eu.
             In mei accusamus efficiendi mediocritatem, eos ex paulo complectitur.
-            {{ Html::link('http://npk/test.com', 'NPK') }}
+            {{ Html::link('http://npk.test.rb', 'NPK') }}
         </div>
     </div>
     <!--/ panel body with collapse capabale -->

@@ -15,10 +15,11 @@ Route::get('/', [ 'middleware' => 'auth', 'uses' => 'MainController@index']);
 
 Route::get('/account',          [ 'middleware' => 'auth', 'uses' => 'AccountController@index']);
 Route::post('/account',         [ 'middleware' => 'auth', 'uses' => 'AccountController@self_update']);
+Route::post('/account/password',         [ 'middleware' => 'auth', 'uses' => 'AccountController@self_update']);
 
-Route::get( '/agency', [ 'middleware' => 'auth', 'uses' => 'AgencyControler@list']);
-Route::get( '/agency/{id}', [ 'middleware' => 'auth', 'uses' => 'AgencyControler@detail']);
-Route::get( '/agency/{id}/edit', [ 'middleware' => 'auth', 'uses' => 'AgencyControler@edit_form']);
+// Route::get( '/agency', [ 'middleware' => 'auth', 'uses' => 'AgencyController@list']);
+// Route::get( '/agency/{id}', [ 'middleware' => 'auth', 'uses' => 'AgencyController@detail']);
+// Route::get( '/agency/{id}/edit', [ 'middleware' => 'auth', 'uses' => 'AgencyController@edit_form']);
 
 Route::group(['prefix' => 'manage', 'middleware' => [ 'auth', 'manage' ] ], function () {
     // lista agencji
@@ -26,7 +27,7 @@ Route::group(['prefix' => 'manage', 'middleware' => [ 'auth', 'manage' ] ], func
 
     // tworzenie agencji
     Route::get('agency/create', [ 'as' => 'agency_create', 'uses' => 'Manage\AgencyController@create']);
-    Route::post('agency/create', [ 'as' => 'agency_put', 'uses' => 'Manage\AgencyController@put' ]);
+    Route::post('agency/create', [ 'as' => 'agency_put', 'uses' => 'Manage\AgencyController@store' ]);
 
     //edycja agencji
     Route::get('agency/{id}/edit', [ 'as'=> 'agency_edit', 'uses' => 'Manage\AgencyController@edit']);

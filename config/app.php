@@ -175,6 +175,7 @@ return [
     'aliases' => [
 
         'Form' => Collective\Html\FormFacade::class,
+		// 'Form' => App\Libraries\FormBuilder\FormBuilderFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
 
         'App' => Illuminate\Support\Facades\App::class,

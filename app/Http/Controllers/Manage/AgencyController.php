@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Manage;
 
 use Illuminate\Http\Request;
 
+use Auth;
 use App\Models\Agency;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -18,6 +19,7 @@ class AgencyController extends Controller {
     public function __construct( AgencyRepository $repository ) {
 
         $this->repository = $repository;
+        $this->model = new Agency();
         $this->addBreadcrumb('Agencies', route('agency_list'));
     }
 
@@ -53,6 +55,10 @@ class AgencyController extends Controller {
 
         $agency = Agency::find( $id );
         $this->setData( 'agency', $agency );
+
+        if (Auth::user()->cannot('update', $agency)) {
+            $this->setView('errors.forbidden');
+        }
 
         $this->add_assets( '../plugins/ladda/js/ladda.js', 'js');
         $this->add_assets( '../plugins/parsley/js/parsley.js', 'js' );
@@ -91,11 +97,15 @@ class AgencyController extends Controller {
         return $this->render( $request );
     }
 
-    public function store( Request $request ) {
-
-        $agency = Agency::find( $id );
-        $agency->fill( $request->except(['_token']) );
-        $res = $agency->save();
-        return response()->json(['text' => $res]);
+    public function put( Request $request ) {
+        return [];
     }
+
+//     public function store( Request $request ) {
+
+//         $agency = Agency::find( $id );
+//         $agency->fill( $request->except(['_token']) );
+//         $res = $agency->save();
+//         return response()->json(['text' => $res]);
+//     }
 }

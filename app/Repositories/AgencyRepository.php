@@ -1,10 +1,15 @@
 <?php namespace App\Repositories;
 
 use App\Repositories\ResourceRepository;
+use App\Models\Agency;
 
 class AgencyRepository extends ResourceRepository {
 
     protected $model;
+
+    public function __construct(Agency $agency) {
+        $this->model = $agency;
+    }
 
     public function getPaginate($n) {
         return $this->model->paginate($n);
