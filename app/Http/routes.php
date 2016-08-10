@@ -31,7 +31,7 @@ Route::group(['prefix' => 'manage', 'middleware' => [ 'auth', 'manage' ] ], func
 
     //edycja agencji
     Route::get('agency/{id}/edit', [ 'as'=> 'agency_edit', 'uses' => 'Manage\AgencyController@edit']);
-    Route::post('agency/{id}', [ 'as'=> 'agency_store', 'uses' => 'Manage\AgencyController@store']);
+    Route::post('agency/{id}', [ 'as'=> 'agency_store', 'uses' => 'Manage\AgencyController@update']);
 
 });
 

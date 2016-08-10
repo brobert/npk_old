@@ -22,12 +22,6 @@ class AgencyPolicy
         //
     }
 
-//     public function before($user, $ability)
-//     {
-//         Log::info('__________________________________________ before');
-//         return $this->_check( $user );
-//     }
-
     private function _check( User $user ) {
         Log::info('__________________________________________check::' . $user->type);
         return in_array( $user->type , [ 'developer', 'admin'] );

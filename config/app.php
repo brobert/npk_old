@@ -158,7 +158,6 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Collective\Html\HtmlServiceProvider::class,
-
     ],
 
     /*
@@ -175,9 +174,7 @@ return [
     'aliases' => [
 
         'Form' => Collective\Html\FormFacade::class,
-		// 'Form' => App\Libraries\FormBuilder\FormBuilderFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
-
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
