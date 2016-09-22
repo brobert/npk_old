@@ -8,6 +8,7 @@ use App\Http\Requests;
 
 class ResourceController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *

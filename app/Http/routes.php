@@ -23,7 +23,7 @@ Route::post('/account/password',         [ 'middleware' => 'auth', 'uses' => 'Ac
 
 Route::group(['prefix' => 'manage', 'middleware' => [ 'auth', 'manage' ] ], function () {
     // lista agencji
-    Route::get('agency', [ 'as' => 'agency_list', 'uses' => 'Manage\AgencyController@index']);
+    Route::get('agency', [ 'as' => 'manage.agency.index', 'uses' => 'Manage\AgencyController@index']);
 
     // tworzenie agencji
     Route::get('agency/create', [ 'as' => 'agency_create', 'uses' => 'Manage\AgencyController@create']);

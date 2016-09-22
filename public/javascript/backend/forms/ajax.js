@@ -41,11 +41,11 @@
                 data: data
             }).done(function (data) {
 
-                $.gritter.add({
-                    title: data.status || $btn.data('title-s') || 'Succes',
-                    text: $btn.data('msg-s') || 'All setting saved',
-                    time: 1500
-                });
+//                $.gritter.add({
+//                    title: data.status || $btn.data('title-s') || 'Succes',
+//                    text: $btn.data('msg-s') || 'All setting saved',
+//                    time: 1500
+//                });
                 
             }).fail(function (data) {
 
@@ -62,11 +62,11 @@
                     break;
                 }
                 
-                $.gritter.add({
-                    title: $btn.data('title-f') || 'Error',
-                    text: $btn.data('msg-f') || 'Something went wrong, try again later',
-                    time: 3000
-                });
+//                $.gritter.add({
+//                    title: $btn.data('title-f') || 'Error',
+//                    text: $btn.data('msg-f') || 'Something went wrong, try again later',
+//                    time: 3000
+//                });
             });
         }
 

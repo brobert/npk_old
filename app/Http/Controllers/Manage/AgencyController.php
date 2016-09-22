@@ -20,7 +20,7 @@ class AgencyController extends Controller {
 
         $this->repository = $repository;
         $this->model = new Agency();
-        $this->addBreadcrumb('Agencies', route('agency_list'));
+        $this->addBreadcrumb('Agencies', route('manage.agency.index'));
     }
 
     /**

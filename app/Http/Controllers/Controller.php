@@ -19,6 +19,10 @@ class Controller extends BaseController {
 
     protected $view = false;
 
+    protected $message_store = 'OK';
+
+    protected $message_update;
+
     protected $data = [
         'breadCrumbs' => [],
     ];

@@ -7,6 +7,8 @@ class AgencyRepository extends ResourceRepository {
 
     protected $model;
 
+    protected $message_update = 'Update OK';
+
     public function __construct(Agency $agency) {
         $this->model = $agency;
     }
