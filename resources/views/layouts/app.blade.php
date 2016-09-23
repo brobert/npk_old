@@ -19,6 +19,7 @@
 
         <!-- START STYLESHEETS -->
         <!-- Plugins stylesheet : optional -->
+        <link rel="stylesheet" href="/plugins/steps/css/jquery-steps.css">
         <!--/ Plugins stylesheet : optional -->
 
         <!-- Application stylesheet : mandatory -->
@@ -57,8 +58,13 @@
 
         <!-- Plugins and page level script : optional -->
         <script type="text/javascript" src="/javascript/pace.min.js"></script>
+        <script type="text/javascript" src="/plugins/gritter/js/jquery.gritter.js"></script>
+        <script type="text/javascript" src="/javascript/pace.min.js"></script>
+        <script type="text/javascript" src="/plugins/steps/js/jquery-steps.js"></script>
         <script type="text/javascript" src="/plugins/nprogress/nprogress.js"></script>
         <script type="text/javascript" src="/plugins/parsley/js/parsley.js"></script>
+        <script type="text/javascript" src="/plugins/inputmask/js/inputmask.js"></script>
+        <script type="text/javascript" src="/javascript/backend/forms/wizard.js"></script>
         <script type="text/javascript" src="/javascript/backend/pages/login.js"></script>
         <!--/ Plugins and page level script : optional -->
         <!--/ END JAVASCRIPT SECTION -->

@@ -17,18 +17,7 @@
         factory();
     }
 }(function () {
-
     $(function () {
-        // Form wizard with no validation
-        // ================================
-        $('#wizard').steps({
-            headerTag: '.wizard-title',
-            bodyTag: '.wizard-container',
-            onFinished: function () {
-                // do anything here ;)
-                //alert('finished!');
-            }
-        });
 
         // Form wizard with validation
         // ================================
@@ -37,15 +26,12 @@
             bodyTag: '.wizard-container',
             transitionEffect: 'fade',
             onStepChanging: function (event, currentIndex, newIndex) {
+                debugger;
                 // Allways allow previous action even if the current form is not valid!
                 if (currentIndex > newIndex) {
                     return true;
                 }
 
-                // Forbid next action on 'Warning' step if the user is to young
-                if (newIndex === 3 && Number($('#age-2').val()) < 18) {
-                    return false;
-                }
 
                 // NOTE: Use parsley group(data-parsley-group) to validate form group
                 // and move to next container if validation is passed. No need to init
@@ -56,18 +42,14 @@
 
                 // validate 'order' section: data-parsley-group='order'
                 if ((currentIndex === 0)) {
-                    return $(this).parsley().validate('order');
+                    return $(this).parsley().validate('basic');
                 }
 
                 // validate 'information' section: data-parsley-group='information'
                 if ((currentIndex === 1)) {
-                    return $(this).parsley().validate('information');
+                    return $(this).parsley().validate('advance');
                 }
 
-                // validate 'payment' section: data-parsley-group='payment'
-                if ((currentIndex === 2)) {
-                    return $(this).parsley().validate('payment');
-                }
             },
             onStepChanged: function (event, currentIndex, priorIndex) {
                 // Used to skip the 'Warning' step if the user is old enough.
@@ -87,7 +69,7 @@
             onFinished: function () {
                 // yayyy! all validation is pass.. now we can send data to server
                 // or display message ;)
-                //alert('submitted!');
+                alert('submitted!');
             }
         });
     });

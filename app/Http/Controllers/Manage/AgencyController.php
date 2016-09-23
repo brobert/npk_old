@@ -12,7 +12,7 @@ use App\Repositories\AgencyRepository;
 
 class AgencyController extends Controller {
 
-    protected $base = 'manage.agency';
+    protected $base = 'agency';
 
     protected $columns = ['*'];
 

@@ -55,7 +55,7 @@
                 </thead>
                 <tbody>
                     @foreach( $agencies as $agency )
-                        @include('manage/agency/partials/index_table_row', $agency )
+                        @include('agency/partials/index_table_row', $agency )
                     @endforeach
                 </tbody>
             </table>
