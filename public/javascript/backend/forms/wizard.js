@@ -70,6 +70,10 @@
                 // yayyy! all validation is pass.. now we can send data to server
                 // or display message ;)
                 alert('submitted!');
+                var form = $(this);
+
+                // Submit form input
+                form.submit();
             }
         });
     });

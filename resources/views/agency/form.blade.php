@@ -13,7 +13,8 @@
             </div>
             <!--/ panel heading/header -->
             <!-- START Form Wizard -->
-            <form class="form-horizontal form-bordered" action="" id="wizard-validate">
+            <form class="form-horizontal form-bordered" method="post" action="/manage/agency/{{$agency->id}}" id="wizard-validate">
+                {{ csrf_field() }}
                 <!-- Wizard Container basic -->
                 <div class="wizard-title">Customize Order</div>
                 <div class="wizard-container">
@@ -32,48 +33,6 @@
         </div>
         <!--/ END Panel -->
     </div>
-</div>
-<!--/ END row -->
-
-<!-- START row -->
-<div class="row">
-    <!-- Left / Top Side -->
-    <div class="col-lg-3">
-        <!-- tab menu -->
-        <ul class="list-group list-group-tabs">
-            <li class="list-group-item active">
-                <a href="#basic" data-toggle="tab"><i class="ico-user2 mr5"></i> {{trans('form.agency.basic')}}</a>
-            </li>
-            <li class="list-group-item">
-                <a href="#advance" data-toggle="tab"><i class="ico-archive2 mr5"></i> {{trans('form.agency.advance')}}</a>
-            </li>
-        </ul>
-        <!-- tab menu -->
-
-        <hr><!-- horizontal line -->
-    </div>
-    <!--/ Left / Top Side -->
-
-    <!-- Left / Bottom Side -->
-    <div class="col-lg-9">
-        <!-- START Tab-content -->
-        <div class="tab-content">
-            <!-- tab-pane: profile -->
-            <div class="tab-pane active" id="basic">
-                @include( 'agency.partials.form_basic')
-            </div>
-            <!--/ tab-pane: profile -->
-
-            <!-- tab-pane: account -->
-            <div class="tab-pane" id="advance">
-                @include('agency.partials.form_advance')
-            </div>
-            <!--/ tab-pane: account -->
-
-        </div>
-        <!--/ END Tab-content -->
-    </div>
-    <!--/ Left / Bottom Side -->
 </div>
 <!--/ END row -->
 

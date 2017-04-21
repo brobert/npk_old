@@ -77,10 +77,7 @@
     $(function () {
         // Init form
         // ================================
-        $('form[name="agency"]').on('submit', formAjax);
-        $('form[name="validation"]').on('submit', formAjax);
-        $('form[name="404"]').on('submit', formAjax);
-        $('form[name="500"]').on('submit', formAjax);
+        $('form[role="ajax"]').on('submit', formAjax);
     });
 
 }));
