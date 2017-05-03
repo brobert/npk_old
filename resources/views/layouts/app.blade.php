@@ -62,11 +62,20 @@
         <script type="text/javascript" src="/javascript/pace.min.js"></script>
         <script type="text/javascript" src="/plugins/steps/js/jquery-steps.js"></script>
         <script type="text/javascript" src="/plugins/nprogress/nprogress.js"></script>
-        <script type="text/javascript" src="/plugins/parsley/js/parsley.js"></script>
+        <script type="text/javascript" src="/plugins/parsley/parsley.js"></script>
         <script type="text/javascript" src="/plugins/inputmask/js/inputmask.js"></script>
         <script type="text/javascript" src="/javascript/backend/forms/wizard.js"></script>
         <script type="text/javascript" src="/javascript/backend/pages/login.js"></script>
+
+        <script type="text/javascript" src="/plugins/flot/js/jquery.flot.js"></script>
+        <script type="text/javascript" src="/plugins/flot/js/jquery.flot.resize.js"></script>
+        <script type="text/javascript" src="/plugins/flot/js/jquery.flot.categories.js"></script>
+        <script type="text/javascript" src="/plugins/flot/js/jquery.flot.time.js"></script>
+        <script type="text/javascript" src="/plugins/flot/js/jquery.flot.tooltip.js"></script>
+        <script type="text/javascript" src="/plugins/flot/js/jquery.flot.spline.js"></script>
         <!--/ Plugins and page level script : optional -->
+
+        <script type="text/javascript" src="../javascript/backend/app.js"></script>
         <!--/ END JAVASCRIPT SECTION -->
     </body>
     <!--/ END Body -->

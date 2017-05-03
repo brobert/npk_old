@@ -27,6 +27,13 @@
                     @include('agency.partials.form_advance')
                 </div>
                 <!-- /Wizard Container advance -->
+
+                <!-- Wizard Container advance -->
+                <div class="wizard-title">Section TAX</div>
+                <div class="wizard-container">
+                    @include('agency.partials.form_tax')
+                </div>
+                <!-- /Wizard Container advance -->
             </form>
             <!--/ END Form Wizard -->
         </div>

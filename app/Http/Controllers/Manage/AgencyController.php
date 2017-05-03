@@ -61,7 +61,6 @@ class AgencyController extends Controller {
         }
 
         $this->add_assets( '../plugins/ladda/js/ladda.js', 'js');
-        $this->add_assets( '../plugins/parsley/js/parsley.js', 'js' );
         $this->add_assets( '../plugins/ladda/js/vendor/spin.js', 'js' );
         $this->add_assets( '../plugins/gritter/js/jquery.gritter.js', 'js' );
 
@@ -88,7 +87,6 @@ class AgencyController extends Controller {
         $this->setData( 'form_action', route('agency_create') );
 
         $this->add_assets( '../plugins/ladda/js/ladda.js', 'js');
-        $this->add_assets( '../plugins/parsley/js/parsley.js', 'js' );
         $this->add_assets( '../plugins/ladda/js/vendor/spin.js', 'js' );
         $this->add_assets( 'backend/forms/ajax.js', 'js' );
 

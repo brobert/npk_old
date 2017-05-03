@@ -26,7 +26,7 @@
         // ================================
         sidebarSparklines: {
             init: function () {
-                $('aside .sidebar-sparklines').sparkline('html', { enableTagOptions: true });
+                $('.sidebar-sparklines').sparkline('html', { enableTagOptions: true });
             }
         },
 

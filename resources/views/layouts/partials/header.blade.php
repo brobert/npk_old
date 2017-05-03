@@ -50,8 +50,13 @@
 
                 <!-- START Right nav -->
                 <ul class="nav navbar-nav navbar-right">
+                	<li class="">
+                		<a href="javascript:void(0);">
+                			<button type="button" class="btn btn-inverse mb5"><i class="ico-minus-sign"></i> Zgłoś nieobecność</button>
+                		</a>
+                	</li>
 					<!-- Notification dropdown -->
-                    @if ( count( $notification ))
+                    @if ( 1 )
                         @include('common.header.notification_dropdown')
                     @endif
                     <!--/ Notification dropdown -->
