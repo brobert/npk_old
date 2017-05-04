@@ -1,4 +1,4 @@
-﻿<!-- section header -->
+<!-- section header -->
 <div class="section-header mb15">
 	<h5 class="semibold">Obecności</h5>
 </div>

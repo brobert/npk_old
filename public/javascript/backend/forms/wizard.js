@@ -25,6 +25,9 @@
             headerTag: '.wizard-title',
             bodyTag: '.wizard-container',
             transitionEffect: 'fade',
+			labels: {
+				finish: 'Zapisz',
+			},
             onStepChanging: function (event, currentIndex, newIndex) {
                 debugger;
                 // Allways allow previous action even if the current form is not valid!

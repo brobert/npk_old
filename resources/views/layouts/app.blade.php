@@ -67,7 +67,16 @@
         <script type="text/javascript" src="/plugins/inputmask/js/inputmask.js"></script>
         <script type="text/javascript" src="/javascript/backend/forms/wizard.js"></script>
         <script type="text/javascript" src="/javascript/backend/pages/login.js"></script>
+
+        <script type="text/javascript" src="/plugins/flot/js/jquery.flot.js"></script>
+        <script type="text/javascript" src="/plugins/flot/js/jquery.flot.resize.js"></script>
+        <script type="text/javascript" src="/plugins/flot/js/jquery.flot.categories.js"></script>
+        <script type="text/javascript" src="/plugins/flot/js/jquery.flot.time.js"></script>
+        <script type="text/javascript" src="/plugins/flot/js/jquery.flot.tooltip.js"></script>
+        <script type="text/javascript" src="/plugins/flot/js/jquery.flot.spline.js"></script>
         <!--/ Plugins and page level script : optional -->
+
+        <script type="text/javascript" src="../javascript/backend/app.js"></script>
         <!--/ END JAVASCRIPT SECTION -->
     </body>
     <!--/ END Body -->

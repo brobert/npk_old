@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\Events\ChildAddEvent;
 
 class MainController extends Controller {
 
@@ -28,6 +29,9 @@ class MainController extends Controller {
 
 
         $this->setView('index');
+        
+        event(new ChildAddEvent($request));
+        
         return $this->render( $request );
     }
 }

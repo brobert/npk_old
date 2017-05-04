@@ -2,7 +2,11 @@
 
 return [
 
-    'title' => 'Niepubliczne przedszkole "Krasnal" w Krakowie',
+    'title' => 'Niepubliczne przedszkole "Krasnal" w Krakowie.',
+	'page' => [
+		'desc' => 'Panel Administracyjny',
+		'autor'	=> 'BRobert',
+	],
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -53,7 +57,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Europe/Warsaw',
 
     /*
     |--------------------------------------------------------------------------
